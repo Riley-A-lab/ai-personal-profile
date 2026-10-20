@@ -1,97 +1,53 @@
-# AI Personal Profile｜跨 AI 共享个人档案
+# AI Product & Brand Knowledge Base｜AI 产品与品牌知识库
 
-> Purpose: Give different AI assistants a consistent, editable summary of my background, preferences, tools, projects, and goals.
->
-> 说明：这是一个持续维护的个人档案。只保留有助于协作的信息；不确定的内容请标记为“待确认”，不要把示例当作事实。
+> 用途：为不同 AI 助手提供统一、可维护的品牌规范、产品事实和图片/视频生成规则，减少重复描述和产品外观错误。
 
-## 1. Personal Introduction & Background｜个人简介与背景
+## 核心规则｜Read First
 
-- **Current focus｜当前方向：** AI 辅助产品宣传内容制作与海外 B2B 社媒营销。
-- **Experience level｜经验阶段：** 有 AI 产品视频制作经验，正在积累海外营销、账号运营和线索跟进经验。
-- **Typical work｜常见工作：** 产品宣传视频脚本、画面生成提示词、产品应用场景图、短视频内容，以及面向海外客户的营销素材。
-- **Brands/projects｜品牌/项目：** KIWINURSE、Mosalogic（按具体任务选择，不要混用品牌资料）。
-- **Information to confirm｜待补充：** 希望公开的个人介绍、所在时区、职业经历摘要。
+1. **KIWINURSE 与 Mosalogic 使用相同的产品型号和产品基础结构。** 两个品牌的区别是品牌 Logo、视觉主题、品牌文案与营销表达；不得因为切换品牌而擅自改变产品结构、参数或功能。
+2. **产品事实只维护一份。** 具体型号的结构、尺寸、功能和参数以 `products/shared-models/` 为准；品牌目录只定义各自的 Logo、色彩、视觉风格和文案。
+3. **先选品牌，再选型号。** 每次生成前，明确品牌（KIWINURSE 或 Mosalogic）、产品型号、目标市场、内容用途和画幅比例。
+4. **上传的产品参考图优先。** 保留外壳形状、比例、孔位、灯管、按键、Logo 位置、材质和真实结构；不添加参考图中不存在的零件。
+5. **不要编造参数或效果。** 未经确认的尺寸、覆盖面积、功率、吸引/捕获率、认证、专利状态和性能描述标记为“待确认”。
+6. **区分事实、创意和待确认项。** 不确定时先提问，或明确标记假设；不要把示例提示词当作产品事实。
 
-**Example only｜示例（不是已确认事实）：**
-> I create AI-assisted product marketing videos and visual assets, and I am building my skills in international B2B marketing.
+## 仓库目录｜Repository Map
 
-## 2. Work & Learning Habits｜工作与学习习惯
+### 品牌规范｜Brands
+- [KIWINURSE 品牌规范](brands/kiwinurse.md)
+- [Mosalogic 品牌规范](brands/mosalogic.md)
+- [双品牌使用规则](brands/brand-switching-rules.md)
 
-- Prefer practical, executable steps over abstract explanations.
-- Break unfamiliar technical tasks into small steps, especially when using GitHub or other developer tools.
-- For work deliverables, clarify the goal, audience, platform, format, constraints, and final output.
-- Separate confirmed facts, reasonable suggestions, and items that require approval.
-- When planning work, make ownership, dependencies, next actions, and completion status visible.
-- Prefer reusable templates, checklists, scripts, and prompts.
+### 共用产品资料｜Shared Product Facts
+- [共用产品型号总表](products/shared-models/README.md)
+- [L08A](products/shared-models/L08A.md)
+- [L08B](products/shared-models/L08B.md)
+- [L15A](products/shared-models/L15A.md)
+- [L15B](products/shared-models/L15B.md)
 
-**Example｜示例：** For a new product video, first confirm product features and target audience, then create the script, shot list, generation prompts, and platform copy.
+> 后续应把其他已确认型号继续加入 shared-models。相同型号的 KIWINURSE 与 Mosalogic 不重复建立两份产品规格，以免资料分叉。
 
-## 3. Communication Style Preferences｜沟通风格偏好
+### 生成工作流与模板｜Generation Workflows
+- [视频脚本与分镜模板](video-generation/video-template.md)
+- [图片生成提示词模板](image-generation/prompt-template.md)
+- [产品一致性与负面约束](rules-and-workflows/product-fidelity.md)
+- [事实核实与发布前检查](rules-and-workflows/verification-checklist.md)
 
-- Use clear, direct Chinese by default; provide natural English copy when the audience is overseas.
-- Keep explanations concise and structured, with headings and numbered steps.
-- Avoid vague marketing claims, invented specifications, and unsupported performance promises.
-- If key information is missing, ask a focused question or label the assumption.
-- For image/video prompts, prioritize product fidelity, realistic scenes, composition, lighting, aspect ratio, and negative constraints.
-- Do not add unnecessary decorative details, text, effects, or product parts that were not requested.
+## 推荐使用流程｜Recommended Workflow
 
-**Example｜示例：** “Use the uploaded product image as the sole product reference. Preserve its exact structure and logo. Create a realistic 16:9 B2B application scene.”
+1. 阅读对应品牌规范，确定本次使用的品牌 Logo 和视觉主题。
+2. 阅读对应型号的共用产品档案，核对参考图和已确认规格。
+3. 选择图片模板或视频模板，填写场景、受众、平台、比例和目标。
+4. 生成时明确列出“必须保留”和“禁止新增/改变”的细节。
+5. 审核产品结构、品牌元素、文字、场景真实性和事实准确性。
+6. 将验证过的新规格或有效提示词回写到仓库；错误案例记录原因，不要覆盖正确的产品资料。
 
-## 4. Common Tools & Technology Stack｜常用工具与技术栈
+## 事实状态标签｜Fact Status
+- **已确认｜Confirmed**：来自用户确认的产品资料或明确的品牌规范。
+- **待确认｜To confirm**：信息缺失、来源不完整或尚未核实。
+- **生成建议｜Prompt guidance**：为了生成质量提出的创作指令，不代表产品规格或性能事实。
 
-- **ChatGPT：** drafting, planning, prompt writing, research, and workflow support.
-- **AI image/video tools：** product visuals, application scenes, and promotional video production.
-- **Feishu/Lark：** work plans, weekly reports, tables, and team handoffs.
-- **GitHub：** storing this profile, tracking changes, and sharing context across AI tools.
-- **Skill level note：** assume beginner-level programming knowledge unless I say otherwise; provide step-by-step guidance for command-line or Git tasks.
+## 使用方式与安全｜Usage & Safety
+将对应 Markdown 文件、产品参考图或仓库链接提供给正在使用的 AI。并非所有 AI 都能自动访问 GitHub，因此需要按工具能力上传文件或粘贴相关内容。
 
-Update this section when tools change. Do not store passwords, API keys, recovery codes, or other credentials here.
-
-## 5. Project Experience & Achievements｜项目经历与成果
-
-### KIWINURSE product marketing
-- Create AI-assisted promotional videos and visual assets for insect-control products.
-- Typical deliverables include B2B application scenes, product detail visuals, shot-by-shot video scripts, generation prompts, captions, and hashtags.
-- Target use cases may include warehouses, logistics centers, commercial kitchens, restaurants, and other business environments.
-- Product accuracy is essential: preserve the supplied product's geometry, proportions, logo, materials, and real features.
-
-### Mosalogic content
-- Create product-related visuals and promotional content for overseas-facing use.
-- Confirm the correct brand and product reference before reusing any assets.
-
-**Project record template｜项目记录模板**
-- Project:
-- Goal / audience:
-- My role:
-- Deliverables:
-- Tools used:
-- Result / evidence:
-- What I learned:
-- Publicly shareable? Yes / No / Need confirmation
-
-Only add measurable results when they are verified. Do not publish confidential company information.
-
-## 6. Long-Term Goals｜长期目标
-
-- Improve overseas B2B marketing and social media operations.
-- Build a repeatable workflow from product research to content production, publishing, performance tracking, and lead handoff.
-- Improve the quality, consistency, and efficiency of AI-assisted product videos and visual assets.
-- Become more confident using GitHub and other digital tools to organize work and knowledge.
-- Build a portfolio of accurate, professional, reusable marketing deliverables.
-
-**Next goals to define｜待明确：** measurable milestones, target platforms, learning priorities, and review dates.
-
-## How to Use This Profile｜如何使用
-
-1. Share this README with an AI assistant when you want it to understand your working context.
-2. Ask the assistant to use confirmed facts only, and to ask before filling in missing personal details.
-3. Keep separate brand or project facts in separate documents when the details are extensive.
-4. Review this profile regularly and remove anything outdated or not appropriate for public access.
-
-## Maintenance & Version History｜维护与版本记录
-
-- Edit this file when your role, tools, preferences, projects, or goals change.
-- Use meaningful Git commit messages, such as `docs: update work preferences`.
-- Review changes in the repository's **History** view and restore an earlier version if needed.
-- This repository is public. Do not include private contact details, salary, confidential business information, passwords, API keys, or sensitive personal data.
-- Mark uncertain details as **To confirm｜待确认** rather than presenting them as facts.
+本仓库为公开仓库。不要上传客户隐私、公司机密、账号密码、API Key、未公开报价或无权公开的原始文件。
